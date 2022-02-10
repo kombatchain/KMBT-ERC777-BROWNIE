@@ -7,10 +7,11 @@ from brownie import (
     TransparentUpgradeableProxy,
     Contract,
     accounts,
+    config,
 )
 from web3 import Web3
 
-initial_supply = Web3.toWei(25000000000, "ether")
+initial_supply = Web3.toWei(20000000000, "ether")
 
 
 def main():
@@ -18,10 +19,13 @@ def main():
 
 
 def deploy():
-    account = get_account()
+    account = get_account(id="kc-test-account")
     print(f"account: {account}")
     print(f"Deploying to {network.show_active()}")
-    kmbt = KMBT.deploy({"from": account}, publish_source=False)
+    kmbt = KMBT.deploy(
+        {"from": account},
+        publish_source=config["networks"][network.show_active()].get("verify", False),
+    )
 
     #  if you do have a proxy admin and use some type of defi protocol, proxy admin should be a type of multisig e.g. Gnosis-safe, (not done here)
 
@@ -35,7 +39,7 @@ def deploy():
         proxy_admin.address,
         kmbt_encoded_initializer_function,
         {"from": account, "gas_limit": 1000000},
-        publish_source=False,
+        publish_source=config["networks"][network.show_active()].get("verify", False),
     )
     print(f"Proxy deployed to {proxy}, you can now upgrade!")
     proxy_kmbt = Contract.from_abi("KMBT", proxy.address, KMBT.abi)

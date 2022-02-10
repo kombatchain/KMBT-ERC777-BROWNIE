@@ -7,5 +7,10 @@ compiler:
       - '@openzeppelin=OpenZeppelin/openzeppelin-contracts-upgradeable@3.4.2'
       - '@openzeppelin1=OpenZeppelin/openzeppelin-contracts@4.1.0'
 dotenv: .env
+networks:
+  development:
+    verify: False
+  polygon-test:
+    verify: False
 wallets:
   from_key: ${PRIVATE_KEY}
