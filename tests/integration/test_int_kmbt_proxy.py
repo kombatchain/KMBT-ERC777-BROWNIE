@@ -18,7 +18,7 @@ initial_supply = Web3.toWei(25000000000, "ether")
 
 
 def test_proxy_delegates_calls():
-    account = get_account()
+    account = get_account(id="kc-test-account")
     print(f"account: {account}")
     print(f"Deploying to {network.show_active()}")
     kmbt = KMBT.deploy({"from": account}, publish_source=False)
@@ -48,7 +48,7 @@ def test_proxy_delegates_calls():
 
 
 def test_proxy_pause_reverts_from_non_pauser_role():
-    account = get_account()
+    account = get_account(id="kc-test-account")
     print(f"account: {account}")
     print(f"Deploying to {network.show_active()}")
     kmbt = KMBT.deploy({"from": account}, publish_source=False)

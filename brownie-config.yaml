@@ -12,5 +12,7 @@ networks:
     verify: False
   polygon-test:
     verify: False
+  mainnet-fork:
+    verify: False
 wallets:
   from_key: ${PRIVATE_KEY}
