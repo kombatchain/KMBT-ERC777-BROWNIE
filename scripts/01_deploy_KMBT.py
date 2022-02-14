@@ -29,7 +29,10 @@ def deploy():
 
     #  if you do have a proxy admin and use some type of defi protocol, proxy admin should be a type of multisig e.g. Gnosis-safe, (not done here)
 
-    proxy_admin = ProxyAdmin.deploy({"from": account}, publish_source=False)
+    proxy_admin = ProxyAdmin.deploy(
+        {"from": account},
+        publish_source=config["networks"][network.show_active()].get("verify", False),
+    )
 
     initializer = kmbt.initialize, "KOmbat", "KMBT", [], account, initial_supply, "", ""
     kmbt_encoded_initializer_function = encode_function_data(initializer)
