@@ -12,6 +12,8 @@ networks:
     verify: False
   polygon-test:
     verify: False
+  rinkeby:
+    verify: True
   mainnet-fork:
     verify: False
 wallets:
