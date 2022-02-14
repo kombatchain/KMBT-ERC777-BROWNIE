@@ -10,7 +10,11 @@ dotenv: .env
 networks:
   development:
     verify: False
+  rinkeby:
+    verify: True
   polygon-test:
+    verify: False
+  mainnet-fork:
     verify: False
 wallets:
   from_key: ${PRIVATE_KEY}
