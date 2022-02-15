@@ -13,7 +13,7 @@ networks:
   rinkeby:
     verify: True
   polygon-test:
-    verify: False
+    verify: True
   mainnet-fork:
     verify: False
 wallets:
