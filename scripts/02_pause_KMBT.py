@@ -16,6 +16,6 @@ def pause():
     proxy_kmbt = Contract.from_abi(
         "KMBT", "0xA01261685b57E80EF63eF9d86bfeFf1264447BAc", KMBT.abi
     )
-    tx = proxy_kmbt.pause({"from": account})
+    tx = proxy_kmbt.pause({"from": account, "priority_fee": 210640000000})
     tx.wait(1)
     print(f"Token paused: {proxy_kmbt.paused()}")
