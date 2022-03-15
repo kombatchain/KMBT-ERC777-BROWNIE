@@ -1,9 +1,9 @@
 // SPDX-License-Identifier: MIT
-pragma solidity >=0.6.0 <0.8.0;
+pragma solidity 0.8.2;
 
 import "@openzeppelin/contracts/token/ERC777/ERC777Upgradeable.sol";
 import "@openzeppelin/contracts/access/AccessControlUpgradeable.sol";
-import "@openzeppelin/contracts/utils/PausableUpgradeable.sol";
+import "@openzeppelin/contracts/security/PausableUpgradeable.sol";
 
 contract KMBT is
     Initializable,

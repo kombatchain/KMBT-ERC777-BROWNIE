@@ -1,11 +1,11 @@
 dependencies:
-  - OpenZeppelin/openzeppelin-contracts-upgradeable@3.4.2
-  - OpenZeppelin/openzeppelin-contracts@4.1.0
+  - OpenZeppelin/openzeppelin-contracts-upgradeable@4.5.2
+  - OpenZeppelin/openzeppelin-contracts@4.5.0
 compiler:
   solc:
     remappings:
-      - '@openzeppelin=OpenZeppelin/openzeppelin-contracts-upgradeable@3.4.2'
-      - '@openzeppelin1=OpenZeppelin/openzeppelin-contracts@4.1.0'
+      - '@openzeppelin=OpenZeppelin/openzeppelin-contracts-upgradeable@4.5.2'
+      - '@openzeppelin-contracts=OpenZeppelin/openzeppelin-contracts@4.5.0'
 dotenv: .env
 networks:
   development:
