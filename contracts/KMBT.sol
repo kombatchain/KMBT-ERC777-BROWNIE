@@ -52,7 +52,7 @@ contract KMBT is
         uint256 amount,
         bytes memory userData,
         bytes memory operatorData
-    ) internal {
+    ) internal onlyInitializing {
         require(
             hasRole(MINTER_ROLE, _msgSender()),
             "KMBT: must have minter role to mint"
